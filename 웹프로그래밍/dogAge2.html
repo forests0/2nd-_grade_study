@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>dog age calc1-소중형견</title>
+  <link rel="stylesheet" href="./css/age.css">
+</head>
+<body>
+  <button class="btn" onclick="calc()">강아지 나이 계산하기1</button>
+  <div id = "result" class="show"> 결과표시 </div>
+  <script>
+    function calc() {
+      const dogName = prompt("개의 이름을 입력하세요")
+      const dogAge = prompt("개의 나이를 입력하세요")
+      const year = 16 *(Math.log(dogAge)) + 31;
+
+      document.querySelector("#result").innerHTML = '당신의 강아지 ${dogName} 의 나이는 ${dogAge}살, 사람의 나이로는 ${year}살 입니다!';
+    }
+  </script>
+</body>

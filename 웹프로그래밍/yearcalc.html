@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>나이 계산하기</title>
+	<link rel="stylesheet" href="css/age.css">
+	<script>
+		function calc() {
+			const curyear = prompt("올해 연도를 입력하세요", "2022");
+            let birthyear = prompt("태어난 연도를 입력하세요", "YYYY");
+            let age;
+            age = curyear - birthyear + 1;
+            document.querySelector("#result").innerHTML = '${curyear} 년 현재, ${birthyear} 년생의 나이는 ${age}세 입니다.';
+
+		}
+	</script>
+	
+</head>
+<body>	
+	<button class="btn" onclick="calc();">나이 계산하기</button>
+	<div id="result" class="show">(결과 값 표시)</div>
+</body>
+</html>
