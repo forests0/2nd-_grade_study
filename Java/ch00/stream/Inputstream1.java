@@ -1,9 +1,7 @@
 package com.company.example.ch00.stream;
 
 import java.io.IOException;
-/*
-    입력받아서 한번에 출력함
- */
+
 public class Inputstream1 {
 
     public static void main(String[] args) {
@@ -13,7 +11,7 @@ public class Inputstream1 {
         for (int i = 0; i < input.length; i++) {
             try {
                 a = System.in.read();
-                System.in.read(); // 엔터값 빼기
+                System.in.read();
             } catch (IOException e) {
                 System.out.println("IOException");
             }
