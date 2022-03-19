@@ -2,7 +2,9 @@ package com.company.example.ch00.stream;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
+/*
 
+ */
 public class Inputstream2 {
     public static void main(String[] args) {
         byte[] input = new byte[1024];
