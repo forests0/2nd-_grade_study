@@ -10,20 +10,24 @@ using namespace std;
 
 struct Car
 {
+
 	char gamerID[ID_LEN];
 	int fuelGauge;
 	int curSpeed;
-	
+    int letitem;
+	public :
 	void ShowCarState();
     void Accel();
     void Break();
+    int AttackCar(Car a, Car b);
 };
 
 void Car::ShowCarState()
 {
-	cout << "유저ID: " << gamerID << endl;
-	cout << "연료량: " << fuelGauge << endl;
-	cout << "현재속도: " << curSpeed << endl;
+	cout << "유저ID : " << gamerID << endl;
+	cout << "연료량 : " << fuelGauge << endl;
+	cout << "현재속도 : " << curSpeed << endl;
+    cout<< "남은 아이템양 : " << letitem << endl;
 }
 
 void Car::Accel() {
@@ -48,8 +52,13 @@ void Car::Break() {
     curSpeed -= BRK_step;
 }
 
+
+int AttackCar(Car a, Car b) {
+    
+}
+
 int main() {
-    Car car1 = {"Hello", 100, 0};
+    Car car1 = {"Hello", 100, 0, 10};
 
 
     car1.Accel();
