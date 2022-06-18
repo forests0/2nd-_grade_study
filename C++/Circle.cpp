@@ -23,10 +23,9 @@ class Ring
     Point ipo, opo;
 
 public:
-    void Init(float x, float y, float l, float x2, float y2, float l2)
-    {
-        ipo.Init(x, y);
-        len = l;
+    Ring(float x1, float y1, float l1, float x2, float y2, float l2) {
+        ipo.Init(x1, y1);
+        len = l1;
         opo.Init(x2, y2);
         len2 = l2;
     }
@@ -44,8 +43,7 @@ public:
 
 int main()
 {
-    Ring ring;
-    ring.Init(1, 1, 4, 2, 2, 9);
+    Ring ring(1, 1, 4, 2, 2, 9);
     ring.ShowRInfo();
     return 0;
 }

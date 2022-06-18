@@ -30,12 +30,12 @@ public:
     friend Point &operator--(Point &);
     friend Point operator~(Point &);
 };
-
+/*
 Point operator~(const Point& p) {
     Point r(p.ypos, p.xpos);
     return r;
 }
-
+*/
 Point &operator++(Point &p)
 {
     p.xpos += 1;
