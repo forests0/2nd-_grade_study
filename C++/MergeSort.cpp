@@ -55,5 +55,8 @@ int main() {
     for(int i = 0; i < n; i++) {
         cin>>lists[i];
     }
-
+    MergeSort(lists, 0, n);
+    for(int i = 0; i < n; i++) {
+        cout<< sort[i] << " ";
+    }
 }
