@@ -16,7 +16,7 @@ int main(void) {
     int val1 = 10;
     int val2 = 20;
 
-    sbyval();
+    Sbyval(val1, val2);
 
-    sbyref();
+    Sbyref(val1, val2);
 }
