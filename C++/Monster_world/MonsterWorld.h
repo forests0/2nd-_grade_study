@@ -1,28 +1,87 @@
-#include "Canvas.h"
+#ifndef __MONSTER_WORLD_H__
+#define __MONSTER_WORLD_H__
+
 #include "Monster.h"
+//#include "window.h"
+
 #define MAX_MONSTER 20
+using namespace std;
 
 class MonsterWorld {
 private:
     int map[DIM][DIM];
     int xMax, yMax, nMon, nMove;
     Monster* mon[MAX_MONSTER];
-    Canvas canvas;
+    Canvas canvas; 
 public:
-    MonsterWorld(int width, int height) : xMax(width), yMax(yMax) {};
-    ~MonsterWorld();
+    MonsterWorld(int width, int height): canvas(width, height), xMax(width), yMax(height), nMon(0), nMove(0) {
+        for(int i = 0; i < yMax; i++) {
+            for(int j = 0; j < xMax; j++) {
+                map[i][j] = 1;
+            }
+        }
+    }
+    ~MonsterWorld() {
+        for(int i = 0; i < nMon; i++) {
+            delete mon[i];
+        }
+    }
+
     void add(Monster* m) {
+        if(nMon < MAX_MONSTER) mon[nMon++] = m;
+    }
 
-    };
     void print() {
+        system("clear");
+        canvas.clear();
+        for(int y = 0; y < yMax; y++) {
+            for(int x = 0; x < xMax; x++) {
+                if(map[y][x] == 1) {
+                    canvas.draw(x, y, '.');
+                }
+            }
+        }
+        for(int i = 0; i < nMon; i++) {
+            mon[i] -> draw(canvas);
+        }
 
-    };
+        canvas.print("[ Monster World ]");
+
+        cout << "남은 이동 횟수 = " << nMove << endl;
+
+        cout << "남은 아이템 개수 = " << countItems() << endl;
+
+        for(int i = 0; i < nMon; i++) {
+            mon[i] -> print();
+        }
+    }
+
+    int countItems() {
+        int nItems = 0;
+        for(int y = 0; y < yMax; y++) {
+            for(int x = 0; x < xMax; x++) {
+                if(map[y][x] == 1) nItems++;
+            }
+        }
+        return nItems;
+    }
+
     void play(int maxWalk, int wait) {
-        print(); // 초기 화면 출력
-        cout << " 엔터를 누르세요...";
+        print();
+        cout << " 게임이 시작됩니다...";
         getchar();
-        // 몬스터 움직이기
-        // 변경된 화면 출력
-        // wait만큼 기다리기
+        for(int i = 0; i < maxWalk; i++) {
+            for(int k = 0; k < nMon; k++) {
+                mon[k] -> move(map, xMax, yMax);
+            }
+            nMove++;
+            print();
+
+            if(countItems() == 0) break;
+
+            //Sleep(wait);
+        }
     }
 };
+
+#endif

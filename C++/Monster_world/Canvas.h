@@ -1,12 +1,12 @@
 #include <iostream>
 #ifndef __CANVAS_H__
-#endif __CANVAS_H__
+#define __CANVAS_H__
 #define DIM 40
 using namespace std;
 
 class Canvas {
 private:
-    char board[DIM][DIM];
+    char board[DIM][DIM]  ;
     int xMax, yMax;
 public:
     Canvas(int width = 10, int height = 10) : xMax(width), yMax(height) {
@@ -39,3 +39,5 @@ public:
         cout<<endl;
     };
 };
+
+#endif 

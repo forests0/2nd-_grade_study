@@ -1,58 +1,45 @@
+#ifndef __MONSTER_H__
+#define __MONSTER_H__
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include "Canvas.h"
-#include <time.h>
-using namespace std;
 
 class Monster {
-private:
+protected:
     string name;
     char icon;
     int x, y, nItem;
+
     void clip(int xMax, int yMax) {
-        if(x < 0) x= 0;
-        if(x >= xMax) x = xMax - 1;
-        if(y < 0) y= 0;
-        if(y >= yMax) x = yMax - 1;
+      if(x < 0) x = 0;
+      if(x >= xMax) x = xMax - 1;
+      if(y < 0) y = 0;
+      if(y >= xMax) y = yMax - 1;
     }
+
     void eat(int map[DIM][DIM]) {
-        if(map[y][x] == 1) {
-            map[y][x] = 0;
-            nItem++;
-        }
+      if(map[y][x] == 1) {
+        map[y][x] = 0;
+        nItem++;
+      }
     }
 public:
-    Monster(string name, char icon, int x, int y) : name(name), icon(icon), x(x), y(y), nItem(0) {};
-    ~Monster() {
-        cout << "\t" << name << icon <<" bye"<< endl;
-    };
+    Monster(string name = "괴물", char icon = '@', int x = 0, int y = 0) : name(name), icon(icon), x(x), y(y), nItem(0) {}
+
+    virtual ~Monster() {
+      cout << "\t" << name << icon << " 퇴장합니다~~" << endl;
+    }
+
     void draw(Canvas& canvas) {
-        canvas.draw(x,y,icon);
-    };
-    void move(int map[DIM][DIM], int xMax, int yMax) {
-        srand(time(NULL));
-        int movings = rand() % 8;
-        switch(movings) {
-            case 0 :
-                y--; break;
-            case 1 :
-                x++; y--; break;
-            case 2 :
-                x++; break;
-            case 3 :
-                x++; y++; break;
-            case 4 :
-                y++; break;
-            case 5 :
-                x--; y++; break;
-            case 6 :
-                x--; break;
-            case 7 :
-                x--; y--; break;
-        }
-        clip(xMax, yMax);
-        eat(map);
-    };
+      canvas.draw(x, y, icon);
+    }
+    
+    virtual void move(int map[DIM][DIM], int xMax, int yMax) = 0;
+
     void print() {
-        cout << "\t" << name << icon << " : "<< nItem << endl;
-    };
+      cout << "몬스터 " << icon << " : " << nItem << endl;
+    }
 };
+
+#endif
