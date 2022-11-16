@@ -1,9 +1,11 @@
 #ifndef __MONSTER_H__
 #define __MONSTER_H__
+
 #include <string>
 #include <cstdlib>
 #include <ctime>
 #include "Canvas.h"
+#include "Matrix.h"
 
 class Monster {
 protected:
@@ -18,27 +20,27 @@ protected:
       if(y >= xMax) y = yMax - 1;
     }
 
-    void eat(int map[DIM][DIM]) {
+    void eat(int** map) {
       if(map[y][x] == 1) {
         map[y][x] = 0;
         nItem++;
       }
     }
 public:
-    Monster(string name = "괴물", char icon = '@', int x = 0, int y = 0) : name(name), icon(icon), x(x), y(y), nItem(0) {}
+    Monster(string name = "monster", char icon = '@', int x = 0, int y = 0) : name(name), icon(icon), x(x), y(y), nItem(0) {}
 
     virtual ~Monster() {
-      cout << "\t" << name << icon << " 퇴장합니다~~" << endl;
+      cout << name << icon << " 안녕~~" << endl;
     }
 
     void draw(Canvas& canvas) {
       canvas.draw(x, y, icon);
     }
     
-    virtual void move(int map[DIM][DIM], int xMax, int yMax) = 0;
+    virtual void move(int** map, int xMax, int yMax) = 0;
 
     void print() {
-      cout << "몬스터 " << icon << " : " << nItem << endl;
+      cout << name << icon << ":" << nItem << endl;
     }
 };
 
