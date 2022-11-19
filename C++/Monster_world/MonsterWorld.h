@@ -2,25 +2,25 @@
 #define __MONSTER_WORLD_H__
 
 #include "Monster.h"
-//#include "window.h"
-
+#include "windows.h"
+#include "Canvas.h"
 #define MAX_MONSTER 20
-using namespace std;
 
 class MonsterWorld {
 private:
-    int map[DIM][DIM];
+    Matrix<int> map;
     int xMax, yMax, nMon, nMove;
     Monster* mon[MAX_MONSTER];
-    Canvas canvas; 
+    Canvas canvas;
 public:
-    MonsterWorld(int width, int height): canvas(width, height), xMax(width), yMax(height), nMon(0), nMove(0) {
+    MonsterWorld(int width, int height): map(width, height), canvas(width, height), xMax(width), yMax(height), nMon(0), nMove(0) {
         for(int i = 0; i < yMax; i++) {
             for(int j = 0; j < xMax; j++) {
-                map[i][j] = 1;
+                map.elem(i, j) = 1;
             }
         }
     }
+
     ~MonsterWorld() {
         for(int i = 0; i < nMon; i++) {
             delete mon[i];
@@ -32,11 +32,11 @@ public:
     }
 
     void print() {
-        system("clear");
+        system("cls");
         canvas.clear();
         for(int y = 0; y < yMax; y++) {
             for(int x = 0; x < xMax; x++) {
-                if(map[y][x] == 1) {
+                if(map.elem(y, x) == 1) {
                     canvas.draw(x, y, '.');
                 }
             }
@@ -47,7 +47,7 @@ public:
 
         canvas.print("[ Monster World ]");
 
-        cout << "남은 이동 횟수 = " << nMove << endl;
+        cout << "남은 움직임 수 = " << nMove << endl;
 
         cout << "남은 아이템 개수 = " << countItems() << endl;
 
@@ -60,7 +60,7 @@ public:
         int nItems = 0;
         for(int y = 0; y < yMax; y++) {
             for(int x = 0; x < xMax; x++) {
-                if(map[y][x] == 1) nItems++;
+                if(map.elem(y, x) == 1) nItems++;
             }
         }
         return nItems;
@@ -68,18 +68,18 @@ public:
 
     void play(int maxWalk, int wait) {
         print();
-        cout << " 게임이 시작됩니다...";
+        cout << "엔터를 누르면 시작합니다...";
         getchar();
         for(int i = 0; i < maxWalk; i++) {
             for(int k = 0; k < nMon; k++) {
-                mon[k] -> move(map, xMax, yMax);
+                mon[k] -> move(map.getMatrix(), xMax, yMax);
             }
             nMove++;
             print();
 
             if(countItems() == 0) break;
 
-            //Sleep(wait);
+            Sleep(wait);
         }
     }
 };
