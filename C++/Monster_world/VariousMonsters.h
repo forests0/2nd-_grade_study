@@ -2,10 +2,10 @@
 #define __VARIOUS_MONSTERS_H__
 
 #include "Monster.h"
-
+#include "Input.h"
 class Zombie: public Monster {
   public:
-    Zombie(string name="zombie", char icon='!', int x=0, int y=0): Monster(name, icon, x, y) {}
+    Zombie(string name="Zombie", char icon='!', int x=0, int y=0): Monster(name, icon, x, y) {}
 
     void move(int** map, int xMax, int yMax) {
       srand((unsigned)time(NULL));
@@ -30,7 +30,7 @@ class Zombie: public Monster {
 
 class Vampire: public Monster {
   public:
-    Vampire(string name="vampire", char icon='@', int x=0, int y=0): Monster(name, icon, x, y) {}
+    Vampire(string name = "vampire", char icon='@', int x=0, int y=0): Monster(name, icon, x, y) {}
 
     void move(int** map, int xMax, int yMax) {
       srand((unsigned)time(NULL));
@@ -73,5 +73,7 @@ class PowerZombie: public Monster {
       cout << "[ PowerZombie] ";
     }
 };
+
+
 
 #endif
