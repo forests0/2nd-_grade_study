@@ -1,46 +1,47 @@
+#pragma once
 #ifndef __CANVAS_H__
 #define __CANVAS_H__
 
-#include <iostream>
 #include "Matrix.h"
+#include <iostream>
+#define MAX_LINE 100
 #define DIM 40
 using namespace std;
 
 class Canvas {
 private:
-    Matrix<char> map;
-    int xMax, yMax;
+  Matrix<char> board;
+  int xMax, yMax;
+
 public:
-    Canvas(int xMax, int yMax) : xMax(xMax), yMax(yMax), map(xMax, yMax) {
-      for(int i = 0; i < yMax; i++) {
-        for(int j = 0; j < xMax; j++) {
-          map.elem(i, j) = ' ';
-        }
+  Canvas(int width = 10, int height = 10)
+      : xMax(width), yMax(height), board(height, width) {
+    for (int y = 0; y < yMax; y++)
+      for (int x = 0; x < xMax; x++)
+        board.elem(y, x) = ' ';
+  }
+  void draw(int x, int y, char val) {
+    if (x >= 0 && x < xMax && y >= 0 && y < yMax) {
+      board.elem(y, x) = val;
+    }
+  }
+  void clear(char val = ' ') {
+    for (int y = 0; y < yMax; y++)
+      for (int x = 0; x < xMax; x++) {
+        draw(x, y, val);
       }
-    }
-
-    void draw(int i, int j, char word) {
-      if(i >= 0 && i < xMax && j >= 0 && j < yMax) map.elem(j, i) = word;
-    }
-
-    void print(const char* title = "<My Canvas>") {
-      cout << title << endl;
-      for(int i = 0; i < yMax; i++) {
-        for(int j = 0; j < xMax; j++) {
-          cout << map.elem(i, j);
-        }
-        cout << endl;
+  }
+  void print(char *title = "<My Canvas>") {
+    cout << title << endl;
+    
+    for (int y = 0; y < yMax; y++) {
+      for (int x = 0; x < xMax; x++) {
+        cout << board.elem(y, x);
       }
       cout << endl;
     }
-
-    void clear(char val = ' ') {
-      for(int i = 0; i < yMax; i++) {
-        for(int j = 0; j < xMax; j++) {
-          draw(j, i, val);
-        }
-      }
-    }
+    cout << endl;
+  }
 };
 
 #endif
