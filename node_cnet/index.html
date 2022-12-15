@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .chatlog {
+        width: 95%;
+        height: 100px;
+      }
+      .name {
+        width: 10%;
+      }
+      .message {
+        width: 70%;
+      }
+      .char {
+        width: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <textarea
+        id="chatlog"
+        class="chat-log"
+        cols="30"
+        rows="10"
+        readonly
+      ></textarea>
+    </div>
+    <form action="" id="chat">
+      <input type="text" name="name" id="name" readonly />
+      <input type="text" id="message" class="message" />
+      <input type="submit" name="chat" id="chat" />
+    </form>
+    <div id="box" class="box">
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    </div>
+    <script>
+      let socket = io();
+      $("#chat").on("submit", (e) => {
+        socket.emit("send message", $("#name").val(), $("#message").val());
+        $("#message").val("");
+        $("#message").focus();
+        e.preventDefault();
+      });
+      socket.on("receive message", (msg) => {
+        $("#chatlog").append(msg + "\n");
+        $("#chatlog").scrollTop($("#chatlog")[0].scrollHeight);
+      });
+      socket.on("change name", (name) => {
+        $("#name").val(name);
+      });
+    </script>
+  </body>
+</html>
