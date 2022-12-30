@@ -1,0 +1,20 @@
+.trend--div {
+    padding-left : 40px;
+    margin: 0;
+}
+
+.input::placeholder {
+    text-align: center !important;
+}
+
+.trend--input {
+    background-image: url(img/searchicon.png);
+    background-repeat: no-repeat;
+    background-position: 13px center;
+    background-size: contain;
+    width: 350px;
+    height:40px;
+    border-radius: 30px;
+    background-color: lightgray;
+    border: none;
+}

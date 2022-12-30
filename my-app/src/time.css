@@ -1,0 +1,169 @@
+.TimeLinePage {
+    width: 500px;
+    padding-left: 250px;
+}
+
+.header-page {
+    position: fix;
+    height: 40px;
+    text-align: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+header {
+    padding-top: 10px;
+}
+
+#head-text {
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 20px ;
+    vertical-align: middle;
+}
+
+#head-icon {
+    vertical-align: middle;
+    padding-left: 435px;
+}
+
+.twitPage {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    
+}
+
+input:focus {
+    outline: none;
+}
+
+#twit-text {
+    vertical-align: middle;
+    width: 250px;
+    font-size: 18px;
+    border: 0 solid black;
+}
+
+img {
+    vertical-align: middle
+}
+
+#icons {
+    padding-top: 20px;
+    padding-bottom: 18px;
+}
+
+.first-icon {
+    padding-left: 60px;
+}
+
+.icon {
+    padding-left: 10px;
+}
+
+#twit-btn {
+    margin-left: 160px;
+    background-color: #1DA1F2;
+    border-radius: 50px;
+    border: none;
+    height: 35px;
+    width: 100px;
+}
+
+#icon-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.listPage{
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.page {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.page-text {
+    color: gray;
+}
+
+#page-icon {
+    padding-left: 200px;
+}
+
+.main-page {
+    padding-left: 60px;
+}
+
+#name-text {
+    font-weight: bold;
+}
+
+.image-container {
+    width: 55px;
+}
+
+.main-container {
+    padding-left: 65px;
+    margin-top: -50px;
+    width: 80%;
+}
+
+.icon-container {
+    margin-top: 10px;
+    padding-left: 65px;
+    width: 80%;
+    padding-bottom: 20px;
+}
+
+.icons {
+    vertical-align: center;
+}
+
+.icon-texts {
+    padding-left: 10px;
+    font-size: 16px;
+    color: gray;
+    vertical-align: center;
+}
+
+.back-container {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#back-img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-icons-first {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border:none;
+    border-radius: 50%;
+}
+
+.btn-icons-second {
+    margin-left: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+}
+
+button:hover {    text-align: center;
+    background-color: rgba(000,153,255, 0.3);
+}
+
+#upload-icon {
+    padding-left: 50px
+}

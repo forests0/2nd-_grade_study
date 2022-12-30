@@ -1,0 +1,239 @@
+footer {
+    display:flex;
+    bottom: 0;
+    width: 100%;
+    height:30px;
+    padding-left : 20px;
+    background-color: white;
+    color: gray;
+    padding-left: 20px;
+    text-align: center;
+}
+
+#footer-nav a{
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+.Banner {
+    position: fixed;
+    display:flex;
+    user-select: none;
+    display:inline-block;
+    padding-left: 4%;
+}
+
+.banner-logo {
+    width:36px;
+    height:36px;
+
+}
+
+.banner-enpage {
+    padding-bottom:20px;
+}
+
+.banner-indiv {
+    padding:3px;
+}
+.banner-logos {
+    width:58px;
+    height:56px;
+
+}
+.banner-profile {
+    padding-top: 40px;
+}
+
+.logo-padding {
+    padding:10px;
+}
+
+.profile-name {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.profile-id {
+    font-size: 8px;
+    color: gray;
+}
+
+.profile-box1 {
+    margin : 0;
+    padding : 0;
+    width : 50px;
+}
+.profile-mspan {
+    margin-left: 65px;
+    margin-top : -45px;
+    padding-bottom : 30px;
+}
+
+.profile-span1 {
+    padding-top : -30px;
+}
+.profile-span2 {
+    padding-bottom : 30px;
+}
+
+body {
+    margin: 0;
+}
+
+.react-main {
+    display:flex;
+}
+
+.content {
+    margin-bottom: 18px;
+}
+
+.big-image {
+    width: 53%;
+    
+}
+
+.login-page {
+    width: 47%
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+#icon-container {
+    padding-left: 22px;
+    padding-top: 35px;
+}
+
+#text-bold {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+#text-bold-container {
+    padding-left: 25px;
+    padding-top: 40px;
+}
+
+#text-container {
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+#text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#login {
+    padding-left: 25px;
+    padding-top: 32px;
+}
+
+#google {
+    width: 300px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+#apple {
+    width: 300px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+#google-text {
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#google-icon {
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+#apple-text {
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#apple-icon {
+    vertical-align: middle;
+}
+
+#line-container {
+    padding-top: 10px;
+    text-align:center;
+    width: 50%;
+}
+
+#btn {
+    width: 300px;
+    height:42px;
+    background-color: #1DA1F2;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+#register-container {
+    padding-left: 25px;
+    padding-top: 10px;
+    width: 300px;
+}
+
+#main-text {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#sub {
+    font-size: 5px;
+    line-height: -50%;
+}
+
+#final-contiainer {
+    padding-left: 25px;
+    padding-top: 50px;
+    width: 300px;
+    height: 50px;
+}
+
+#final-text {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#final-btn {
+    width: 300px;
+    height: 40px;
+    background-color: #fff;
+    border: 0.2px solid lightgray;
+    border-radius: 50px;
+}
+
+#final-Subtext {
+    font-size:16px;
+    font-weight: bold;
+    color: #1DA1F2;
+}
+
+.Home-Page {
+    display: flex;
+}
+
+#banner-home {
+    font-weight: bold;
+}
