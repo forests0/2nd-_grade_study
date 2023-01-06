@@ -1,0 +1,48 @@
+{
+  "quizset": {
+    "quiz1": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz2": {
+      "question": "(356 + 129) / 2 ?",
+      "answer": "242"
+    },
+    "quiz3": {
+      "question": "n^2 +  ?",
+      "answer": "3"
+    },
+    "quiz4": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz5": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz6": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz7": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz8": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz9": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz10": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    },
+    "quiz11": {
+      "question": "1 + 2 ?",
+      "answer": "3"
+    }
+  }
+}
